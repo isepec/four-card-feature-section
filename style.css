@@ -1,0 +1,216 @@
+/* ===== General ===== */
+:root {
+    --clr-prim-cyan: hsl(180, 62%, 55%);
+    --clr-prim-red: hsl(0, 78%, 62%);
+    --clr-prim-orange: hsl(34, 97%, 64%);
+    --clr-prim-blue: hsl(212, 86%, 64%);
+    
+    --clr-neutral-min: hsl(234, 12%, 34%);
+    --clr-neutral-1: hsl(229, 6%, 66%);
+    --clr-neutral-2: hsl(0, 0%, 98%);
+    --clr-neutral-max: white;
+
+    --shadow: 0 12px 15px hsl(210, 45%, 40%, 18%);
+
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    background: var(--clr-neutral-2);
+    color: var(--clr-neutral-min);
+}
+
+
+/* ===== Header ===== */
+header {
+    margin: 80px 2rem 65px;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 200;
+    font-size: 1.5rem;
+    letter-spacing: .3px;
+    line-height: 1.55;
+
+    margin-bottom: 1.0625rem;
+}
+
+header span {
+    font-weight: 600;
+}
+
+header p {
+    color: var(--clr-neutral-1);
+    font-size: 15px;
+    letter-spacing: .1px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+
+/* ===== Main ===== */
+.card-container {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.card {
+    box-shadow: var(--shadow);
+
+    padding: 30px;
+    border-radius: 8px;
+    height: 223px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    background: var(--clr-prim-cyan);
+    height: 4px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.card--supervisor {
+    background: url(images/icon-supervisor.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+}
+
+.card--team-builder {
+    background: url(images/icon-team-builder.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+}
+
+.card--team-builder::before {
+    background: var(--clr-prim-red);
+}
+
+.card--karma {
+    background: url(images/icon-karma.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+}
+
+.card--karma::before {
+    background: var(--clr-prim-orange);
+}
+
+.card--calculator {
+    background: url(images/icon-calculator.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+}
+
+.card--calculator::before {
+    background: var(--clr-prim-blue);
+}
+
+.card {
+    background-size: 59px 59px;
+}
+
+.card__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card__description {
+    color: var(--clr-neutral-1);
+    font-size: 13px;
+}
+
+/* ===== Media Queries ===== */
+/* Medium */
+@media (min-width: 600px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Large */
+@media (min-width: 900px) {
+    header h1 {
+        font-size: 36px;
+        line-height: 1.45;
+    }
+    
+    main {
+        display: grid;
+        place-items: center;
+    }
+    
+    .card-container {
+        max-width: 1112px;
+
+        margin: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        grid-template-areas:
+            "a b d"
+            "a c d";
+    }
+
+    .card {
+        height: 250px;
+        background-size: 64px 64px;
+
+        box-shadow: var(--shadow);
+
+        transition: transform .5s, box-shadow .5s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 20px hsl(210, 45%, 40%, 8%);
+    }
+
+    .card--supervisor {
+        grid-area: a;
+        grid-row: span 2;
+        align-self: center;
+    }
+    
+    .card--team-builder {
+        grid-area: b;
+    }
+    
+    .card--karma {
+        grid-area: c;
+    }
+    
+    .card--calculator {
+        grid-area: d;
+        grid-row: span 2;
+        align-self: center;
+    }
+}
+
+
+/* ===== Footer ===== */
+footer {
+    font-size: .7rem;
+    text-align: center;
+
+    margin: 10em auto 5em;
+}
+
+footer a {
+    color: var(--clr-prim-orange);
+    transition: color .3s;
+}
+
+footer a:hover {
+    color: var(--clr-prim-blue);
+}
