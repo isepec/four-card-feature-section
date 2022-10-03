@@ -10,7 +10,7 @@
     --clr-neutral-2: hsl(0, 0%, 98%);
     --clr-neutral-max: white;
 
-    --shadow: 0 12px 15px hsl(210, 45%, 40%, 18%);
+    --shadow: 0 0.75rem 0.9375rem hsl(210, 45%, 40%, 18%);
 
     font-family: 'Poppins', sans-serif;
 }
@@ -29,14 +29,14 @@ html, body {
 
 /* ===== Header ===== */
 header {
-    margin: 80px 2rem 65px;
+    margin: 5rem 2rem 4.0625rem;
     text-align: center;
 }
 
 header h1 {
     font-weight: 200;
     font-size: 1.5rem;
-    letter-spacing: .3px;
+    letter-spacing: 0.0187rem;
     line-height: 1.55;
 
     margin-bottom: 1.0625rem;
@@ -48,9 +48,9 @@ header span {
 
 header p {
     color: var(--clr-neutral-1);
-    font-size: 15px;
-    letter-spacing: .1px;
-    max-width: 550px;
+    font-size: 0.9375rem;
+    letter-spacing: 0.0063rem;
+    max-width: 34.375rem;
     margin: 0 auto;
 }
 
@@ -60,15 +60,15 @@ header p {
     margin: 2rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 1.5625rem;
 }
 
 .card {
     box-shadow: var(--shadow);
 
-    padding: 30px;
-    border-radius: 8px;
-    height: 223px;
+    padding: 1.875rem;
+    border-radius: 0.5rem;
+    height: 13.9375rem;
 
     position: relative;
     overflow: hidden;
@@ -78,18 +78,18 @@ header p {
     content: "";
     position: absolute;
     background: var(--clr-prim-cyan);
-    height: 4px;
+    height: 0.25rem;
     width: 100%;
     top: 0;
     left: 0;
 }
 
 .card--supervisor {
-    background: url(images/icon-supervisor.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+    background: url(images/icon-supervisor.svg) no-repeat bottom 2rem right 2rem, var(--clr-neutral-max);
 }
 
 .card--team-builder {
-    background: url(images/icon-team-builder.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+    background: url(images/icon-team-builder.svg) no-repeat bottom 2rem right 2rem, var(--clr-neutral-max);
 }
 
 .card--team-builder::before {
@@ -97,7 +97,7 @@ header p {
 }
 
 .card--karma {
-    background: url(images/icon-karma.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+    background: url(images/icon-karma.svg) no-repeat bottom 2rem right 2rem, var(--clr-neutral-max);
 }
 
 .card--karma::before {
@@ -105,7 +105,7 @@ header p {
 }
 
 .card--calculator {
-    background: url(images/icon-calculator.svg) no-repeat bottom 32px right 32px, var(--clr-neutral-max);
+    background: url(images/icon-calculator.svg) no-repeat bottom 2rem right 2rem, var(--clr-neutral-max);
 }
 
 .card--calculator::before {
@@ -113,24 +113,24 @@ header p {
 }
 
 .card {
-    background-size: 59px 59px;
+    background-size: 3.6875rem 3.6875rem;
 }
 
 .card__title {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
 }
 
 .card__description {
     color: var(--clr-neutral-1);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 /* ===== Media Queries ===== */
 /* Medium */
 @media (min-width: 600px) {
     header h1 {
-        font-size: 36px;
+        font-size: 2.25rem;
     }
 
     .card-container {
@@ -141,7 +141,7 @@ header p {
 /* Large */
 @media (min-width: 900px) {
     header h1 {
-        font-size: 36px;
+        font-size: 2.25rem;
         line-height: 1.45;
     }
     
@@ -151,7 +151,7 @@ header p {
     }
     
     .card-container {
-        max-width: 1112px;
+        max-width: 69.5rem;
 
         margin: 0 2rem;
         display: grid;
@@ -163,8 +163,8 @@ header p {
     }
 
     .card {
-        height: 250px;
-        background-size: 64px 64px;
+        height: 15.625rem;
+        background-size: 4rem 4rem;
 
         box-shadow: var(--shadow);
 
@@ -173,7 +173,7 @@ header p {
 
     .card:hover {
         transform: scale(1.05);
-        box-shadow: 0 12px 20px hsl(210, 45%, 40%, 8%);
+        box-shadow: 0 0.75rem 1.25rem hsl(210, 45%, 40%, 8%);
     }
 
     .card--supervisor {
